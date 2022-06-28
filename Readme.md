@@ -1,6 +1,6 @@
 # IBO (Ebo Mart Private Limited)
 
-<div align="center">
+<div>
 ---
 ---
 
@@ -8,7 +8,7 @@
 
 ##### PROBLEM STATEMENTS:
 
-###### 1. 1. you need to write a function say, getUniqueProductCount which should return count of each Product(as an object) present in the given list of Products considering Product Name as Key.?
+### 1. you need to write a function say, getUniqueProductCount which should return count of each Product(as an object) present in the given list of Products considering Product Name as Key.?
 
 ###### Sample Output for the given listOfProducts will be :
 
@@ -24,11 +24,30 @@
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: D
+#### Answer:
 
-Within the function, we first declare the `name` variable with the `var` keyword. This means that the variable gets hoisted (memory space is set up during the creation phase) with the default value of `undefined`, until we actually get to the line where we define the variable. We haven't defined the variable yet on the line where we try to log the `name` variable, so it still holds the value of `undefined`.
+```javascript
+let obj = {};
 
-Variables with the `let` keyword (and `const`) are hoisted, but unlike `var`, don't get <i>initialized</i>. They are not accessible before the line we declare (initialize) them. This is called the "temporal dead zone". When we try to access the variables before they are declared, JavaScript throws a `ReferenceError`.
+for(let i=0; i<listOfProducts.length;i++){
+    obj[listOfProducts[i].productName]?obj[listOfProducts[i].productName] +=1: obj[listOfProducts[i].productName] = 1;
+}
+
+console.log(obj)
+
+
+```
+###### output:
+
+```javascript
+{
+  AC: 2,
+  FAN: 1,
+  TV: 2
+}
+
+
+```
 
 </p>
 </details>
