@@ -138,11 +138,11 @@ console.log(getUniquePrducts(listOfProducts));
 ###### output:
 
 ```javascript
-{
-  AC: 2,
-  FAN: 1,
-  TV: 2
-}
+[
+  { productName: 'TV', quantity: 20, description: 'television' },
+  { productName: 'AC', quantity: 10, description: 'air conditioner' },
+  { productName: 'FAN', quantity: 10, description: 'Ceiling Fan' }
+]
 
 
 ```
