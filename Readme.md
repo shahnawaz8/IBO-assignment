@@ -114,14 +114,25 @@ console.log(obj)
 #### Answer:
 
 ```javascript
-let obj = {};
-
-for(let i=0; i<listOfProducts.length;i++){
-    obj[listOfProducts[i].productName]?obj[listOfProducts[i].productName] +=1: obj[listOfProducts[i].productName] = 1;
+const getUniquePrducts = (listOfProducts)=>{
+    
+    let arr = [];
+    listOfProducts.filter((product)=>{
+        if (arr.find((element)=> element.productName === product.productName)){
+                arr.find((element) =>{
+                    if (element.productName === product.productName) {
+                        element.quantity += product.quantity;
+                    }
+                });
+        }
+        else{
+            arr.push(product);
+        }
+    });
+    return arr;
 }
 
-console.log(obj)
-
+console.log(getUniquePrducts(listOfProducts));
 
 ```
 ###### output:
